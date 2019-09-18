@@ -48,4 +48,10 @@ class DiaryController extends Controller
         // 戻った時のフォームを再送信しますか？の対策のため
         return redirect()->route('diary.index');
     }
+
+    // 削除を実行するメソッド
+    public function destroy()
+    {
+
+    }
 }
