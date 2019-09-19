@@ -50,8 +50,15 @@ class DiaryController extends Controller
     }
 
     // 削除を実行するメソッド
-    public function destroy()
+    public function destroy(int $id)
     {
+        // Diaryモデルを使って、削除したい要素の取得
+        $diary = Diary::find($id);
 
+        // 取得した要素を削除
+        $diary->delete();
+
+        // 一覧の画面に戻る
+        return redirect()->route('diary.index');
     }
 }
