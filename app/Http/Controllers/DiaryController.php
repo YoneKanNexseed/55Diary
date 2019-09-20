@@ -75,8 +75,15 @@ class DiaryController extends Controller
     }
 
     // 編集処理をするメソッド
-    public function update(CreateDiary $request)
+    public function update(CreateDiary $request, int $id)
     {
+        // IDをもとに、投稿のタイトル、本文を更新
+        $diary = Diary::find($id);
+        $diary->title = $request->title;
+        $diary->body = $request->body;
+        $diary->save();
 
+        // 一覧ページにリダイレクト
+        return redirect()->route('diary.index');
     }
 }
