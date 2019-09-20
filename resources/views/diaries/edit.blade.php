@@ -8,7 +8,9 @@
     <section class="container m-5">
         <div class="row justify-content-center">
             <div class="col-8">
-                <form action="" method="post">
+                <form action="{{ route('diary.update', ['id' => $diary->id]) }}" method="post">
+                    @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label for="title">タイトル</label>
                         <input type="text" class="form-control" name="title" id="title" value="{{ $diary->title }}">
