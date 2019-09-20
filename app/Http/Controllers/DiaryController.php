@@ -75,7 +75,7 @@ class DiaryController extends Controller
     }
 
     // 編集処理をするメソッド
-    public function update()
+    public function update(CreateDiary $request)
     {
 
     }
