@@ -11,11 +11,11 @@
                 <form action="" method="post">
                     <div class="form-group">
                         <label for="title">タイトル</label>
-                        <input type="text" class="form-control" name="title" id="title" value="">
+                        <input type="text" class="form-control" name="title" id="title" value="{{ $diary->title }}">
                     </div>
                     <div class="form-group">
                         <label for="title">本文</label>
-                        <textarea class="form-control" name="body" id="body"></textarea>
+                        <textarea class="form-control" name="body" id="body">{{ $diary->body }}</textarea>
                     </div>
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">更新</button>

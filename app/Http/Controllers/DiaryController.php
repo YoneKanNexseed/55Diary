@@ -63,9 +63,15 @@ class DiaryController extends Controller
     }
 
     // 編集画面を表示するメソッド
-    public function edit()
+    public function edit(int $id)
     {
-        return view('diaries.edit');
+        // IDをもとに1件投稿を取得
+        $diary = Diary::find($id);
+
+        // 編集画面を表示する時、取得結果を渡す
+        return view('diaries.edit', [
+            'diary' => $diary
+        ]);
     }
 
     // 編集処理をするメソッド
