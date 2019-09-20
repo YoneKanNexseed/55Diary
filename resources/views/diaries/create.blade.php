@@ -2,9 +2,7 @@
 @extends('layout')
 
 <!-- layout.blade.phpのtitleの部分 -->
-@section('title')
-新規投稿
-@endsection
+@section('title', '新規投稿')
 
 <!-- lauout.blade.phpのcontentの部分 -->
 @section('content')

@@ -2,9 +2,7 @@
 @extends('layout')
 
 <!-- layout.blade.phpのtitleの部分 -->
-@section('title')
-一覧
-@endsection
+@section('title', '一覧')
 
 <!-- layout.blade.phpのcontentの部分 -->
 @section('content')
@@ -14,6 +12,7 @@
       <p>{{$diary->title}}</p>
       <p>{{$diary->body}}</p>
       <p>{{$diary->created_at}}</p>
+      <a class="btn btn-success" href="{{ route('diary.edit', ['id' => $diary->id]) }}">編集</a>
       <form action="{{ route('diary.destroy', ['id' => $diary->id]) }}" method="POST" class="d-inline">
         @csrf
         @method('delete')

@@ -61,4 +61,16 @@ class DiaryController extends Controller
         // 一覧の画面に戻る
         return redirect()->route('diary.index');
     }
+
+    // 編集画面を表示するメソッド
+    public function edit()
+    {
+        return view('diaries.edit');
+    }
+
+    // 編集処理をするメソッド
+    public function update()
+    {
+
+    }
 }
